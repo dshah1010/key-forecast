@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/styles.css"/>
+    <title>KeyForecast</title>
+</head>
+
+<body>
+    <br><br>
+    <div class="header">
+        <h1><span class="key">Key</span><span class="forecast">Forecast</span></h1>
+        <img src="{% static 'images/weather.png' %}" alt = "Weather Image" style="width: 75px;">
+    </div>
+    <nav>
+        <form method="post">
+        {% csrf_token %}
+            <div>
+                <input type="text" name="city" placeholder="Choose Your City ..." style="border: 1px solid black;">
+                <div class="search-button">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+        <form>
+    </nav>
+    <br> <br>
+    <section>
+        <div class="container">
+            {% if country_code and coordinates and temp and pressure and humidity and wind_speed %}
+            <ul>
+                <li class="data">
+                    <p><b>Country Code:</b> {{country_code}}</p>
+                    <p><b>Coordinates [X,Y]:</b> {{coordinates}}</p>
+                    <p><b>Temperature:</b> {{temp}}</p>
+                    <p><b>Pressure:</b> {{pressure}}</p>
+                    <p><b>Humidity:</b> {{humidity}}</p>
+                    <p><b>Wind Speed:</b> {{wind_speed}}</p>
+                    <p><b>Forecast:</b> {{main}}</p>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </section>
+</body>
+
+</html>
