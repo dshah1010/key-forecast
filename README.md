@@ -10,35 +10,41 @@ Python and Django are used to develop the backend of this web application where 
 
 # Usage
 
-If you would like to download my project, these are the steps:
+If you would like to download my project, these are the steps (may vary a bit depending on your python version and if you are on Windows/Linux/Mac):
         <ol>
         <li>
-          Go to the directory you want in your command line and write:
+          Open your terminal and navigate to the directory you wish to store the project and run the following command:
           ```
-          git clone https://github.com/dshah1010/listify.git
+          git clone https://github.com/dshah1010/key-forecast.git
           ```
        </li>
        <li>
-          Open Google Chrome. 
+          Create a virtual environment and activate it using the following commands
+          ```
+          python3 -m venv venv
+          ```
+          and
+          ```
+          source venv/bin/activate
+          ```
        </li>
        <li>
-          Click on the extensions icon in the top right. 
+          Once you've activated your virtual environment install your python packages by running:
+          ```
+          pip install -r requirements.txt
+          ```
        </li>
        <li> 
-          Click "Manage extensions". 
+          Migrate the project: 
+          ```
+          python3 manage.py migrate
+          ```
        </li>
-       <li>
-          Toggle on "Developer mode" in the top right. 
-       </li>
-       <li>
-          Click "Load unpacked" in the top left and choose the directory of the cloned project. 
-       </li>
-       <li>
-          The extension is now part of your browser and you have the option to pin and use it. 
-       </li>
-       <li>
-          If you want to make any changes to it, simply edit the files, save them, and reload the browser/extension. 
-       </li>
+       <li> 
+          Navigate to the directory "manage.py" is and type the following in the terminal to view the application: 
+          ```
+          python3 manage.py runserver
+          ```
        </ol>
        
 # What's Next?
