@@ -19,7 +19,7 @@ If you would like to download my project, these are the steps (may vary a bit de
           ```
        </li>
        <li>
-          Create a virtual environment and activate it using the following commands
+          Create a virtual environment and activate it using the following commands:
           ```
           python3 -m venv venv
           ```
